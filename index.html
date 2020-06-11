@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>miiiiiiiiiiiiiiiiii JS</title>
+
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<style>
+    nav {
+        color: black;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        /* display: flex; */
+        /* justify-content: space-between; */
+        /* display: flex; */
+        /* justify-content: space-evenly; */
+        /* align-items: center; */
+    }
+
+    body {
+        margin: 0;
+        height: 200vh;
+    }
+
+    .menu {
+        /* margin: 10px; */
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, .7);
+        /* display: none; */
+        /* visibility: hidden; */
+        /* position: absolute; */
+        /* opacity: 0; */
+        /* left: 0; */
+        /* right: 0; */
+        /* top: 100%; */
+        /* background: red; */
+        /* height: 100vh; */
+        /* transform: translateY(-50px); */
+    }
+
+    .menu-checkbox {
+        display: none;
+    }
+
+    .menu-checkbox:checked~.header .menu-open {
+        border: blue solid 1px;
+        color: black;
+        background: black;
+        background: url('./image/icon-close.svg') no-repeat center;
+        /* background: url('./image/icon-close.svg') no-repeat center; */
+    }
+
+    .menu-checkbox:checked~.header .menu {
+        display: block;
+        text-align: center;
+    }
+
+    .menu-checkbox:checked~.header {
+        background-color: rgba(0, 0, 0, .7);
+    }
+
+    ul {
+        text-decoration: none;
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        /* border-top: rgba(255, 255, 255, .1); */
+        /* border-top: blueviolet; */
+        border-top-style: double;
+
+    }
+
+    .menu-open {
+        /* color: black; */
+        border: solid red 1px;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        display: inline-flex;
+        background: url('./image/icon-hamburger.svg') no-repeat center;
+    }
+
+    a {
+        text-decoration: none;
+        display: block;
+        padding: .3em;
+        /* width: 100%; */
+        /* border: red solid 1px; */
+        color: white;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    p {
+        color: black;
+    }
+
+    /* .menu-checkbox:checked > body {
+        background-color: red;
+        background: red;
+    } */
+    .hero {
+        border: red solid 1px;
+        width: 100%;
+        height: 375px;
+        position: absolute;
+        top: 37px;
+    }
+
+    .particles {
+        position: relative;
+        height: 350px;
+        top: 37px;
+    }
+
+    /* .u-p {
+        color: black;
+        position: absolute;
+        top: 50px;
+        left: 35px; 
+        right: auto;
+    } */
+    h1 {
+        color: black;
+    }
+
+    .hero__text {
+        position: absolute;
+        top: 50px;
+        left: 25px;
+    }
+</style>
+
+<body class="body">
+    <input type="checkbox" id="open" class="menu-checkbox">
+    <header class="header">
+        <img src="" alt="LOGO">
+        <label for="open" class="menu-open"></label>
+        <nav class="menu">
+            <ul>
+                <li><a href="">TAKS1 </a></li>
+                <li><a href="">TAKS1</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div style="height: 375px; position: relative; top: 37px;" class="particles" id="particles-js"></div>
+        <div class="hero__text">
+            <h1>Leonardo Torrico</h1>
+            <p class="u-p">Desarrollador de aplicaciones web</p>
+        </div>
+    </section>
+
+    <!-- <script src="./js/particles.min.js"></script> -->
+    <script src="./js/particles.js"></script>
+    <script src="./js/culo.js"></script>
+
+    <script>
+    </script>
+</body>
+
+</html>
