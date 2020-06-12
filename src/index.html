@@ -9,9 +9,9 @@
 
 </head>
 <style>
-    nav {
-        color: black;
-    }
+    /* #ffcc00 warning yellow */
+    /* #e535ab violet */
+    /* #161e26 black  */
 
     .header {
         display: flex;
@@ -33,8 +33,10 @@
         /* background: #18121e; */
         /* background: #1d2731; */
         /* background: #0a1612; */
-        background: #000;
-
+        background: #161e26;
+        overscroll-behavior: none;
+        /* overscroll-behavior-x: none; */
+        overflow-x: hidden;
     }
 
     .menu {
@@ -46,6 +48,7 @@
         top: 100%;
         width: 100%;
         background-color: rgba(0, 0, 0, .7);
+        z-index: 999;
         /* display: none; */
         /* visibility: hidden; */
         /* position: absolute; */
@@ -94,7 +97,7 @@
 
     .menu-open {
         /* color: black; */
-        border: solid red 1px;
+        /* border: solid red 1px; */
         cursor: pointer;
         width: 35px;
         height: 35px;
@@ -119,7 +122,7 @@
     }
 
     .hero {
-        border: red solid 1px;
+        /* border: red solid 1px; */
         width: 100%;
         height: 500px;
         /* position: absolute; */
@@ -133,48 +136,110 @@
         /* top: 0px; */
     }
 
-    /* .u-p {
-        color: black;
-        position: absolute;
-        top: 50px;
-        left: 35px; 
-        right: auto;
-    } */
-    h1 {
-        color: black;
+    .u-p {
+        letter-spacing: 1px;
+        min-width: max-content;
+        position: relative;
+        color: transparent;
+    }
 
+    .u-p::before {
+        content: attr(data-hero__text);
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        overflow: hidden;
+        border-right: 1px solid #000;
+        animation: type 3s steps(16);
+        white-space: nowrap;
+        /* animation-delay: 2s; */
+        color: yellow;
+    }
+
+    @keyframes typeup {
+        0% {
+            width: 0%;
+        }
+
+        100% {
+            width: 100%;
+        }
+    }
+
+    .sub-title {
+        color: #e535ab;
+    }
+
+    h1 {
+        color: #ffcc00;
+        position: relative;
+        color: transparent;
+        text-transform: uppercase;
+        font-family: monospace;
+        letter-spacing: 5px;
+        width: max-content;
+    }
+
+    h1::before {
+        content: attr(data-text);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-right: 1px solid #000;
+        animation: type 5s steps(16);
+        white-space: nowrap;
+        color: yellow;
+    }
+
+    @keyframes type {
+        0% {
+            width: 0;
+        }
+
+        100% {
+            width: 100%;
+        }
+
+        /* 100% {
+            width: 0;
+        } */
     }
 
     .hero__text {
-        /* position: absolute;
-        top: 50px;
-        left: 25px; */
-        /* display: flex; */
-        /* position: absolute; */
-        /* top: 0; */
         position: relative;
         /* top: -200px; */
         /* top: -65%; */
+        color: #ffcc00;
         bottom: 90%;
         flex-direction: column;
         width: 225px;
         margin: 0 auto;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         text-align: center;
         justify-items: center;
     }
 
     .wrapper {
         text-align: center;
-        padding: .72em;
+        padding: 1.7em;
         justify-content: center;
-        margin: 0 auto;
+        margin: 1em auto;
+        /* border: red 1px solid; */
+        box-shadow: 0 0 25px 2px rgba(255, 255, 255, .03);
+    }
+
+    .cards {
+        display: flex;
+        /* margin: 0 auto; */
     }
 
     .card {
         margin: 2em;
         padding: 5px;
-        border: blue solid 1px;
+        /* border: 1px white solid; */
+        box-shadow: 1px 2px 4px 3px rgba(255, 255, 255, .3);
+        /* border: blue solid 1px; */
     }
 
     .icon {
@@ -252,7 +317,7 @@
     @keyframes arrow {
         0% {
             background: blue;
-            left: -200px;
+            left: -100%;
 
         }
 
@@ -341,7 +406,7 @@
             background: yellow;
             width: 20px;
             height: 20px;
-            left: 200px;
+            left: 100%;
             box-shadow: 0 0 5px 2px rgba(255, 255, 255, 1);
         }
 
@@ -361,12 +426,28 @@
             background: #aaa;
         }
     }
+
+    .social {
+        display: flex;
+
+    }
 </style>
 
 <body class="body">
     <input type="checkbox" id="open" class="menu-checkbox">
     <header class="header">
         <img src="" alt="LOGO">
+        <div class="social">
+            <a href="/">
+                <img style="border: 1px red solid;" src="./image/facebook2.svg" alt=""> </img>
+            </a>
+            <a href="/">
+                <img style="border: 1px red solid;" src="./image/github.svg" alt="">
+            </a>
+            <a href="/">
+                <img style="border: 1px red solid;" src="./image/linkedin.svg" alt="">
+            </a>
+        </div>
         <label for="open" class="menu-open"></label>
         <nav class="menu">
             <ul>
@@ -378,8 +459,9 @@
     <section class="hero">
         <div class="particles" id="particles-js"></div>
         <div class="hero__text">
-            <h1>Leonardo Torrico</h1>
-            <p class="u-p">Desarrollador de aplicaciones web</p>
+            <!-- <h1>Leonardo Torrico</h1> -->
+            <h1 data-text="Leonardo Torrico">Leonardo Torrico</h1>
+            <p data-hero__text="Desarrollador de aplicaciones web" class="u-p">Desarrollador de aplicaciones web</p>
             <picture>
                 <img src="/" alt="YO">
             </picture>
@@ -391,13 +473,15 @@
         <div class="icon-o"></div>
     </div>
     <section class="cards">
+
         <div class="wrapper">
             <h1>Algunos proyectos realizados</h1>
             <div class="card">
                 <img src="/" alt="logo">
                 <details>
-                    <summary>Soy el titulo</summary>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta eveniet
+                    <summary class="sub-title">Soy el titulo</summary>
+                    <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
+                        eveniet
                         consectetur
                         quidem
                         ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
@@ -408,8 +492,9 @@
             <div class="card">
                 <img src="/" alt="logo">
                 <details>
-                    <summary>Soy el titulo</summary>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta eveniet
+                    <summary class="sub-title">Soy el titulo</summary>
+                    <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
+                        eveniet
                         consectetur
                         quidem
                         ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
@@ -420,8 +505,9 @@
             <div class="card">
                 <img src="/" alt="logo">
                 <details>
-                    <summary>Soy el titulo</summary>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta eveniet
+                    <summary class="sub-title">Soy el titulo</summary>
+                    <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
+                        eveniet
                         consectetur
                         quidem
                         ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
