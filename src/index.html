@@ -29,7 +29,12 @@
     body {
         margin: 0;
         height: 200vh;
-        background: #bbb;
+        color: white;
+        /* background: #18121e; */
+        /* background: #1d2731; */
+        /* background: #0a1612; */
+        background: #000;
+
     }
 
     .menu {
@@ -165,10 +170,196 @@
         justify-content: center;
         margin: 0 auto;
     }
+
     .card {
         margin: 2em;
         padding: 5px;
         border: blue solid 1px;
+    }
+
+    .icon {
+        display: flex;
+        /* position: relative; */
+        border: 1px black solid;
+        width: 100%;
+        height: 5px;
+        /* top: 0; */
+        /* text-align: center; */
+        justify-content: center;
+        /* justify-items: center; */
+        /* text-justify: center; */
+    }
+
+    .icon-arrow {
+        width: 5px;
+        height: 25px;
+        /* border-radius: 50%; */
+        background: black;
+        /* transform: rotate(45deg); */
+        position: relative;
+        /* top: 0; */
+        /* top: 0%; */
+        /* bottom: 3px; */
+        animation: arrow 5s ease-in
+            /* delay */
+            infinite
+            /* direction */
+            alternate;
+    }
+
+    .icon-arrow::after {
+        content: '';
+        position: absolute;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        left: 5px;
+        bottom: -6px;
+        width: 5px;
+        height: 16px;
+        background: red;
+        transform: rotate(90deg);
+        animation: arrowafter 5s ease-in
+            /* delay */
+            infinite
+            /* direction */
+            alternate;
+    }
+
+    @keyframes arrowafter {
+        0% {
+            background: blue;
+            /* transform: rotate(45deg);
+            left: -5px; */
+        }
+
+        50% {
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            /* left: 10px; */
+            bottom: 7px;
+            left: 4px;
+            /* opacity: 0; */
+            /* height: 0; */
+            /* top: 5px; */
+        }
+
+        100% {
+            background: yellow;
+        }
+    }
+
+    @keyframes arrow {
+        0% {
+            background: blue;
+            left: -200px;
+
+        }
+
+        50% {
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+        }
+
+        100% {
+            background: yellow;
+            left: 0px;
+        }
+    }
+
+    .icon-e {
+        width: 4px;
+        height: 12.5px;
+        background: red;
+        position: relative;
+        /* top: 0px; */
+        transform: rotate(45deg);
+        left: 7px;
+        border-radius: 50px;
+    }
+
+    .icon-e::after {
+        content: '';
+        position: absolute;
+        /* top: 10px; */
+        left: 6px;
+        top: 4.4px;
+        width: 4px;
+        height: 12.5px;
+        transform: rotate(90deg);
+        background: red;
+        border-radius: 50px;
+    }
+
+    .icon-e::before {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 12.5px;
+        background: yellow;
+        transform: rotate(90deg);
+        /* top: 0px; */
+        /* border-radius: 50%; */
+        border-top-right-radius: 50%;
+        transform: rotate(45deg);
+        z-index: 2;
+        left: 5px;
+        border-radius: 50px;
+    }
+
+    .icon-o {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        /* left: auto; */
+        top: 14px;
+        left: 12px;
+        background: yellow;
+        border-radius: 50%;
+        animation: icono 5s ease-in
+            /* delay */
+            infinite
+            /* direction */
+            alternate;
+    }
+
+    .icon-o::after {
+        content: '';
+        position: absolute;
+        height: 5px;
+        width: 5px;
+        background: red;
+        top: 3px;
+        left: 3.4px;
+        border-radius: 50px;
+        animation: iconoafter 5s ease-in infinite alternate;
+    }
+
+    @keyframes icono {
+        0% {
+            background: yellow;
+            width: 20px;
+            height: 20px;
+            left: 200px;
+            box-shadow: 0 0 5px 2px rgba(255, 255, 255, 1);
+        }
+
+        100% {
+            background: blue;
+        }
+    }
+
+    @keyframes iconoafter {
+        0% {
+            background: #fff;
+            top: 100px;
+            box-shadow: 0 0 3px 1px rgba(255, 255, 255);
+        }
+
+        100% {
+            background: #aaa;
+        }
     }
 </style>
 
@@ -194,8 +385,14 @@
             </picture>
         </div>
     </section>
+    <div class="icon">
+        <div class="icon-arrow"></div>
+        <div class="icon-e"></div>
+        <div class="icon-o"></div>
+    </div>
     <section class="cards">
         <div class="wrapper">
+            <h1>Algunos proyectos realizados</h1>
             <div class="card">
                 <img src="/" alt="logo">
                 <details>
