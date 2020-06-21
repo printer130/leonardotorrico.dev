@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>miiiiiiiiiiiiiiiiii JS</title>
-
+    <link rel="icon" href="./image/facebookcolor.svg">
 </head>
 <style>
     /* #ffcc00 warning yellow */
     /* #e535ab violet */
     /* #161e26 black  */
+    h1 {
+        margin: 0;
+    }
 
     .header {
         display: flex;
@@ -47,18 +50,8 @@
         right: 0;
         top: 100%;
         width: 100%;
-        background-color: rgba(0, 0, 0, .7);
+        background-color: rgba(0, 0, 0, .9);
         z-index: 999;
-        /* display: none; */
-        /* visibility: hidden; */
-        /* position: absolute; */
-        /* opacity: 0; */
-        /* left: 0; */
-        /* right: 0; */
-        /* top: 100%; */
-        /* background: red; */
-        /* height: 100vh; */
-        /* transform: translateY(-50px); */
     }
 
     .menu-checkbox {
@@ -66,11 +59,9 @@
     }
 
     .menu-checkbox:checked~.header .menu-open {
-        border: blue solid 1px;
         color: black;
         background: black;
         background: url('./image/icon-close.svg') no-repeat center;
-        /* background: url('./image/icon-close.svg') no-repeat center; */
     }
 
     .menu-checkbox:checked~.header .menu {
@@ -79,7 +70,61 @@
     }
 
     .menu-checkbox:checked~.header {
-        background-color: rgba(0, 0, 0, .7);
+        background-color: rgba(0, 0, 0, .8);
+    }
+
+    .open-menu__list li a:hover {
+        /* border: 1px red solid; */
+        transform: scale(1.2);
+        color: #ffcc00;
+    }
+
+    .social>a:nth-child(1):hover {
+        transform: scale(1.2);
+    }
+
+    .social>a:nth-child(2):hover {
+        transform: scale(1.2);
+    }
+
+    .social>a:nth-child(3):hover {
+        transform: scale(1.2);
+    }
+
+    .social>a:nth-child(1) {
+        background: url('./image/facebook2.svg') no-repeat center;
+        width: 40px;
+        height: 40px;
+    }
+
+    .social>a:nth-child(2) {
+        background: url('./image/github.svg') no-repeat center;
+        width: 40px;
+        height: 40px;
+    }
+
+    .social>a:nth-child(3) {
+        background: url('./image/linkedin.svg') no-repeat center;
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-checkbox:checked~.header .social>a:nth-child(1) {
+        background: url('./image/facebookcolor.svg') no-repeat center;
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-checkbox:checked~.header .social>a:nth-child(2) {
+        background: url('./image/githubcolor.svg') no-repeat center;
+        width: 40px;
+        height: 40px;
+    }
+
+    .menu-checkbox:checked~.header .social>a:nth-child(3) {
+        background: url('./image/linkedincolor.svg') no-repeat center;
+        width: 40px;
+        height: 40px;
     }
 
     ul {
@@ -141,6 +186,9 @@
         min-width: max-content;
         position: relative;
         color: transparent;
+        display: inline;
+        color: white;
+        /* white-space: nowrap; */
     }
 
     .u-p::before {
@@ -150,7 +198,7 @@
         height: 20px;
         overflow: hidden;
         border-right: 1px solid #000;
-        animation: type 3s steps(16);
+        /* animation: type 3s steps(16); */
         white-space: nowrap;
         /* animation-delay: 2s; */
         color: yellow;
@@ -166,11 +214,9 @@
         }
     }
 
-    .sub-title {
-        color: #e535ab;
-    }
 
-    h1 {
+
+    .leonardo {
         color: #ffcc00;
         position: relative;
         color: transparent;
@@ -180,7 +226,7 @@
         width: max-content;
     }
 
-    h1::before {
+    .leonardo::before {
         content: attr(data-text);
         position: absolute;
         width: 100%;
@@ -231,28 +277,35 @@
 
     .cards {
         display: flex;
-        /* margin: 0 auto; */
+        margin: 0 auto;
+        width: 350px;
+        justify-content: center;
+        align-items: center;
     }
 
     .card {
-        margin: 2em;
         padding: 5px;
         /* border: 1px white solid; */
-        box-shadow: 1px 2px 4px 3px rgba(255, 255, 255, .3);
+        cursor: pointer;
+        box-shadow: 1px 2px 3px 2px rgba(255, 255, 255, .3);
         /* border: blue solid 1px; */
+        margin-top: 1.2em;
+    }
+
+    .sub-title {
+        color: #ffcc00;
+    }
+
+    .sub-title::-webkit-details-marker {
+        color: #e535ab;
     }
 
     .icon {
         display: flex;
-        /* position: relative; */
         border: 1px black solid;
         width: 100%;
         height: 5px;
-        /* top: 0; */
-        /* text-align: center; */
         justify-content: center;
-        /* justify-items: center; */
-        /* text-justify: center; */
     }
 
     .icon-arrow {
@@ -431,28 +484,47 @@
         display: flex;
 
     }
+
+    .social__icons {
+        background: url('./image/facebookcolor.svg') no-repeat center;
+        width: 40px;
+        height: 40px;
+    }
+
+    details[open]>.card {
+        background: white;
+        cursor: none;
+    }
+
+    .links:hover {
+        color: #ffcc00;
+        transform: scale(1.2);
+        box-shadow: 0 0 1px 2px rgb(255, 204, 0, .1);
+    }
 </style>
 
 <body class="body">
     <input type="checkbox" id="open" class="menu-checkbox">
     <header class="header">
         <img src="" alt="LOGO">
-        <div class="social">
+        <div class="social" id='social__icons'>
             <a href="/">
-                <img style="border: 1px red solid;" src="./image/facebook2.svg" alt=""> </img>
+                <!-- <img class="header__social__img" style="border: 1px red solid;" src="./image/facebook2.svg" alt=""> </img> -->
             </a>
             <a href="/">
-                <img style="border: 1px red solid;" src="./image/github.svg" alt="">
+                <!-- <img style="border: 1px red solid;" src="./image/github.svg" alt=""> -->
             </a>
             <a href="/">
-                <img style="border: 1px red solid;" src="./image/linkedin.svg" alt="">
+                <!-- <img style="border: 1px red solid;" src="./image/linkedin.svg" alt=""> -->
             </a>
         </div>
         <label for="open" class="menu-open"></label>
         <nav class="menu">
-            <ul>
+            <ul class="open-menu__list">
                 <li><a href="">TAKS1 </a></li>
                 <li><a href="">TAKS1</a></li>
+                <li><a href="">TAKS1</a></li>
+                <li><a href="">Leonardo Torrico 🎉</a></li>
             </ul>
         </nav>
     </header>
@@ -460,7 +532,7 @@
         <div class="particles" id="particles-js"></div>
         <div class="hero__text">
             <!-- <h1>Leonardo Torrico</h1> -->
-            <h1 data-text="Leonardo Torrico">Leonardo Torrico</h1>
+            <h1 class="leonardo" data-text="Leonardo Torrico">Leonardo Torrico</h1>
             <p data-hero__text="Desarrollador de aplicaciones web" class="u-p">Desarrollador de aplicaciones web</p>
             <picture>
                 <img src="/" alt="YO">
@@ -487,6 +559,19 @@
                         ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
                         veritatis
                         officiis dolorum officia.</p>
+                    <div>
+                        <p class="u-p">
+                            Repositorio:
+                            <a href="/"> <span class="links">
+                                    https://github.com/leoncii/frontendMentor-bookmark </a>
+                            </span>
+                            Url:
+                            <a href="/">
+                                <span class="links">
+                                    https://leoncii.github.io/frontendMentor-bookmark/ </a>
+                            </span>
+                        </p>
+                    </div>
                 </details>
             </div>
             <div class="card">
@@ -518,6 +603,48 @@
         </div>
 
     </section>
+    <section>
+        <div class="wrapper">
+            <h2>Descripcion</h2>
+            <p class="u-p">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni aspernatur excepturi necessitatibus,
+                id laborum molestias illum cum laboriosam natus! Voluptas quae accusantium at nesciunt in dolorum nam
+                officiis quaerat!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni aspernatur excepturi necessitatibus,
+                id laborum molestias illum cum laboriosam natus! Voluptas quae accusantium at nesciunt in dolorum nam
+                officiis quaerat!
+            </p>
+            <h2>Tecnologias:</h2>
+            <div class="tecnologias">
+                <img src="./image/facebook.svg" alt="">
+                <img src="./image/facebook.svg" alt="">
+                <img src="./image/facebook.svg" alt="">
+                <img src="./image/facebook.svg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="form">
+        <form action="">
+            <h2>Registrate:</h2>
+            <label for="">
+                Email:
+            </label>
+            <input type="text" name="" id="">
+            <label for="">
+                Contraseña:
+            </label>
+            <input type="text" name="" id="">
+        </form>
+    </section>
+    <section class="footbar">
+        <p>
+            Algun texto gosu que te haga reir no muy largo
+        </p>
+        <p>
+            By Leonardo with ❤
+        </p>
+    </section>
+
     <!-- <script src="./js/particles.min.js"></script> -->
     <script src="./js/particles.js"></script>
     <script src="./js/culo.js"></script>
