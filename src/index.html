@@ -21,7 +21,8 @@
         justify-content: space-between;
         position: sticky;
         top: 0;
-
+        background: #161e26;
+        z-index: 99;
         /* display: flex; */
         /* justify-content: space-between; */
         /* display: flex; */
@@ -188,6 +189,7 @@
         color: transparent;
         display: inline;
         color: white;
+        z-index: 1;
         /* white-space: nowrap; */
     }
 
@@ -224,6 +226,7 @@
         font-family: monospace;
         letter-spacing: 5px;
         width: max-content;
+        z-index: 0;
     }
 
     .leonardo::before {
@@ -306,179 +309,34 @@
         width: 100%;
         height: 5px;
         justify-content: center;
+        position: absolute;
     }
 
     .icon-arrow {
+        position: relative;
         width: 5px;
-        height: 25px;
-        /* border-radius: 50%; */
-        background: black;
-        /* transform: rotate(45deg); */
-        position: relative;
-        /* top: 0; */
-        /* top: 0%; */
-        /* bottom: 3px; */
-        animation: arrow 5s ease-in
-            /* delay */
-            infinite
-            /* direction */
-            alternate;
-    }
-
-    .icon-arrow::after {
-        content: '';
-        position: absolute;
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
-        left: 5px;
-        bottom: -6px;
-        width: 5px;
-        height: 16px;
-        background: red;
-        transform: rotate(90deg);
-        animation: arrowafter 5s ease-in
-            /* delay */
-            infinite
-            /* direction */
-            alternate;
-    }
-
-    @keyframes arrowafter {
-        0% {
-            background: blue;
-            /* transform: rotate(45deg);
-            left: -5px; */
-        }
-
-        50% {
-            height: 5px;
-            width: 5px;
-            border-radius: 50%;
-            /* left: 10px; */
-            bottom: 7px;
-            left: 4px;
-            /* opacity: 0; */
-            /* height: 0; */
-            /* top: 5px; */
-        }
-
-        100% {
-            background: yellow;
-        }
-    }
-
-    @keyframes arrow {
-        0% {
-            background: blue;
-            left: -100%;
-
-        }
-
-        50% {
-            border-radius: 50%;
-            width: 15px;
-            height: 15px;
-        }
-
-        100% {
-            background: yellow;
-            left: 0px;
-        }
-    }
-
-    .icon-e {
-        width: 4px;
-        height: 12.5px;
-        background: red;
-        position: relative;
-        /* top: 0px; */
-        transform: rotate(45deg);
-        left: 7px;
-        border-radius: 50px;
-    }
-
-    .icon-e::after {
-        content: '';
-        position: absolute;
-        /* top: 10px; */
-        left: 6px;
-        top: 4.4px;
-        width: 4px;
-        height: 12.5px;
-        transform: rotate(90deg);
-        background: red;
-        border-radius: 50px;
-    }
-
-    .icon-e::before {
-        content: '';
-        position: absolute;
-        width: 4px;
-        height: 12.5px;
-        background: yellow;
-        transform: rotate(90deg);
-        /* top: 0px; */
-        /* border-radius: 50%; */
-        border-top-right-radius: 50%;
-        transform: rotate(45deg);
-        z-index: 2;
-        left: 5px;
-        border-radius: 50px;
-    }
-
-    .icon-o {
-        width: 12px;
-        height: 12px;
-        position: relative;
-        /* left: auto; */
-        top: 14px;
-        left: 12px;
-        background: yellow;
-        border-radius: 50%;
-        animation: icono 5s ease-in
-            /* delay */
-            infinite
-            /* direction */
-            alternate;
-    }
-
-    .icon-o::after {
-        content: '';
-        position: absolute;
         height: 5px;
-        width: 5px;
-        background: red;
-        top: 3px;
-        left: 3.4px;
-        border-radius: 50px;
-        animation: iconoafter 5s ease-in infinite alternate;
+        border-radius: 50%;
+        top: 0;
+        animation: bola 10s ease infinite alternate-reverse;
     }
 
-    @keyframes icono {
+    @keyframes bola {
         0% {
-            background: yellow;
-            width: 20px;
-            height: 20px;
-            left: 100%;
-            box-shadow: 0 0 5px 2px rgba(255, 255, 255, 1);
+            left: -48%;
+            background: #ffcc00;
+        }
+
+        50% {
+            background: #161e26;
         }
 
         100% {
-            background: blue;
+            left: 48%;
+            background: #ffcc00;
         }
     }
 
-    @keyframes iconoafter {
-        0% {
-            background: #fff;
-            top: 100px;
-            box-shadow: 0 0 3px 1px rgba(255, 255, 255);
-        }
-
-        100% {
-            background: #aaa;
-        }
-    }
 
     .social {
         display: flex;
@@ -500,6 +358,46 @@
         color: #ffcc00;
         transform: scale(1.2);
         box-shadow: 0 0 1px 2px rgb(255, 204, 0, .1);
+    }
+
+    .tecnologias>img {
+        width: 60px;
+        margin: 0 5px;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        height: 125px;
+        align-items: center;
+        margin: 0 10px;
+    }
+
+    .footer>p {
+        color: aliceblue;
+    }
+
+    form {
+        text-align: -webkit-center;
+    }
+
+    .form__ {
+        /* display: contents; */
+        /* margin: 10px; */
+        padding: 10px;
+        width: min-content;
+    }
+
+    .form__ input {
+        color: #161e26;
+        padding: 3px;
+        border-radius: 4px;
+        border: none;
+        background: #fff;
+    }
+
+    .form__ label {
+        margin: 10px auto;
     }
 </style>
 
@@ -541,8 +439,6 @@
     </section>
     <div class="icon">
         <div class="icon-arrow"></div>
-        <div class="icon-e"></div>
-        <div class="icon-o"></div>
     </div>
     <section class="cards">
 
@@ -585,6 +481,19 @@
                         ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
                         veritatis
                         officiis dolorum officia.</p>
+                    <div>
+                        <p class="u-p">
+                            Repositorio:
+                            <a href="/"> <span class="links">
+                                    https://github.com/leoncii/frontendMentor-bookmark </a>
+                            </span>
+                            Url:
+                            <a href="/">
+                                <span class="links">
+                                    https://leoncii.github.io/frontendMentor-bookmark/ </a>
+                            </span>
+                        </p>
+                    </div>
                 </details>
             </div>
             <div class="card">
@@ -598,8 +507,22 @@
                         ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
                         veritatis
                         officiis dolorum officia.</p>
+                    <div>
+                        <p class="u-p">
+                            Repositorio:
+                            <a href="/"> <span class="links">
+                                    https://github.com/leoncii/frontendMentor-bookmark </a>
+                            </span>
+                            Url:
+                            <a href="/">
+                                <span class="links">
+                                    https://leoncii.github.io/frontendMentor-bookmark/ </a>
+                            </span>
+                        </p>
+                    </div>
                 </details>
             </div>
+
         </div>
 
     </section>
@@ -616,32 +539,37 @@
             </p>
             <h2>Tecnologias:</h2>
             <div class="tecnologias">
-                <img src="./image/facebook.svg" alt="">
-                <img src="./image/facebook.svg" alt="">
-                <img src="./image/facebook.svg" alt="">
-                <img src="./image/facebook.svg" alt="">
+                <img src="./image/html.svg" alt="html">
+                <img src="./image/js.svg" alt="javascript">
+                <img src="./image/css.svg" alt="css">
+                <img src="./image/react.svg" alt="react">
             </div>
         </div>
     </section>
-    <section class="form">
-        <form action="">
+    <div class="wrapper">
+
+        <section class="form">
             <h2>Registrate:</h2>
-            <label for="">
-                Email:
-            </label>
-            <input type="text" name="" id="">
-            <label for="">
-                Contraseña:
-            </label>
-            <input type="text" name="" id="">
-        </form>
-    </section>
-    <section class="footbar">
+            <form action="">
+                <div class="form__">
+                    <label for="">
+                        Email:
+                    </label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="form__">
+                    <label for="">
+                        Contraseña:
+                    </label>
+                    <input type="text" name="" id="">
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <section class="footer">
         <p>
-            Algun texto gosu que te haga reir no muy largo
-        </p>
-        <p>
-            By Leonardo with ❤
+            By Leonardo with <img src="./image/hearth.svg" alt="">
         </p>
     </section>
 
