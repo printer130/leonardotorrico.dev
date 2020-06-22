@@ -29,9 +29,11 @@
         /* justify-content: space-evenly; */
         /* align-items: center; */
     }
+
     ::selection {
         background: #ffcc00;
     }
+
     body {
         margin: 0;
         height: 200vh;
@@ -157,31 +159,20 @@
         text-decoration: none;
         display: block;
         padding: .3em;
-        /* width: 100%; */
-        /* border: red solid 1px; */
         color: white;
         font-weight: 300;
-        letter-spacing: 2px;
         text-align: center;
     }
 
-    p {
-        color: black;
-    }
 
     .hero {
-        /* border: red solid 1px; */
         width: 100%;
         height: 500px;
-        /* position: absolute; */
         top: 37px;
-        /* top: 0; */
     }
 
     .particles {
-        /* position: relative; */
         height: 100%;
-        /* top: 0px; */
     }
 
     .u-p {
@@ -242,7 +233,8 @@
         border-radius: .4em;
         align-items: center;
         box-shadow: 0px 0px 21px 15px rgba(255, 255, 255, .03);
-        color: #ffcc00;
+        color: #e535ab;
+        letter-spacing: 1px;
         bottom: 90%;
         flex-direction: column;
         width: 225px;
@@ -263,25 +255,37 @@
 
     .cards {
         display: flex;
+        flex-direction: column;
         margin: 0 auto;
-        width: 350px;
+        width: 226px;
         justify-content: center;
         align-items: center;
         border-radius: 8px;
     }
 
     .card {
-        padding: 5px;
+        padding: .3em;
+        border: .7px solid #ffcc00;
+        width: 100%;
         /* border: 1px white solid; */
         cursor: pointer;
         box-shadow: 1px 2px 3px 2px rgba(255, 255, 255, .3);
         /* border: blue solid 1px; */
         border-radius: 8px;
         margin-top: 1.2em;
+        padding: 1.5em;
+    }
+
+    .realizados {
+        margin: 1em;
+        display: flex;
+        justify-content: center;
     }
 
     .sub-title {
         color: #ffcc00;
+        margin-top: .5em;
+        margin-bottom: .4em;
     }
 
     .sub-title::-webkit-details-marker {
@@ -335,8 +339,7 @@
 
     .summary-details {
         color: #e535ab;
-        letter-spacing: 1px;
-        font-size: .8em;
+        font-size: 1em;
     }
 
     details {
@@ -344,7 +347,7 @@
     }
 
     .links {
-        font-size: 12px;
+        font-size: .8em;
     }
 
     .links:hover {
@@ -360,10 +363,12 @@
 
     .footer {
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
+        place-content: center;
         height: 125px;
+        flex-direction: column-reverse;
         align-items: center;
-        margin: 0 10px;
+        margin: 0 auto;
     }
 
     .footer>p {
@@ -392,6 +397,44 @@
     .form__ label {
         margin: 10px auto;
     }
+
+    @media screen and (min-width: 600px) {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin: 1em;
+            padding: 1.2em;
+
+        }
+
+        .menu-open {
+            display: none;
+        }
+
+        .hero__text {
+            display: flex;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            /* margin: 0; */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            margin: .5em;
+            width: 100%;
+            /* width: 100%; */
+            min-width: -webkit-fill-available;
+        }
+
+        .footer {
+            flex-direction: inherit;
+            justify-content: space-evenly;
+        }
+    }
 </style>
 
 <body class="body">
@@ -412,9 +455,9 @@
         <label for="open" class="menu-open"></label>
         <nav class="menu">
             <ul class="open-menu__list">
-                <li><a href="">TAKS1 </a></li>
-                <li><a href="">TAKS1</a></li>
-                <li><a href="">TAKS1</a></li>
+                <li><a href="">Esto solo es un menu o eso creemos...</a></li>
+                <li><a href="">No hay nada que ver aqui</a></li>
+                <li><a href=""> <img src="./image/law.svg" alt="hammer"> </a></li>
                 <li><a href="">Leonardo Torrico 🎉</a></li>
             </ul>
         </nav>
@@ -424,7 +467,7 @@
         <div class="hero__text">
             <!-- <h1>Leonardo Torrico</h1> -->
             <h1 class="leonardo" data-text="Leonardo Torrico">Leonardo Torrico</h1>
-            <p data-hero__text="Desarrollador de aplicaciones web" class="u-p">Desarrollador de aplicaciones web</p>
+            <h3 class="leonardo__subtitle">Desarrollador de aplicaciones web</h3>
             <picture>
                 <img src="./image/facebookcolor.svg" alt="YO">
             </picture>
@@ -433,86 +476,56 @@
     <div class="icon">
         <div class="icon-arrow"></div>
     </div>
+    <h1 class="realizados">Proyectos realizados</h1>
     <section class="cards">
-
-        <div class="wrapper">
-            <h1>Proyectos realizados</h1>
-            <div class="card">
-                <img src="/" alt="logo">
-                <details>
-                    <summary class="sub-title">Soy el titulo</summary>
-                    <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
-                        eveniet
-                        consectetur
-                        quidem
-                        ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
-                        veritatis
-                        officiis dolorum officia.</p>
-                    <div class="summary-details">
-                        Repositorio:
-                        <a href="/"> <span class="links">
-                                https://github.com/leoncii/frontendMentor-bookmark </a>
-                        </span>
-                        Url:
-                        <a href="/">
-                            <span class="links">
-                                https://leoncii.github.io/frontendMentor-bookmark/ </a>
-                        </span>
-                    </div>
-                </details>
-            </div>
-            <div class="card">
-                <img src="/" alt="logo">
-                <details>
-                    <summary class="sub-title">Soy el titulo</summary>
-                    <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
-                        eveniet
-                        consectetur
-                        quidem
-                        ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
-                        veritatis
-                        officiis dolorum officia.</p>
-                    <p class="u-p">
-                        Repositorio:
-                        <a href="/">
-                            https://github.com/leoncii/frontendMentor-bookmark
-                        </a>
-                        Url:
-                        <a href="/">
-                            https://leoncii.github.io/frontendMentor-bookmark/
-                        </a>
-                    </p>
-                </details>
-            </div>
-            <div class="card">
-                <img src="/" alt="logo">
-                <details>
-                    <summary class="sub-title">Soy el titulo</summary>
-                    <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
-                        eveniet
-                        consectetur
-                        quidem
-                        ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
-                        veritatis
-                        officiis dolorum officia.</p>
-                    <div>
-                        <p class="u-p">
-                            Repositorio:
-                            <a href="/"> <span class="links">
-                                    https://github.com/leoncii/frontendMentor-bookmark </a>
-                            </span>
-                            Url:
-                            <a href="/">
-                                <span class="links">
-                                    https://leoncii.github.io/frontendMentor-bookmark/ </a>
-                            </span>
-                        </p>
-                    </div>
-                </details>
-            </div>
-
+        <div class="card">
+            <img src="/" alt="logo">
+            <details>
+                <summary class="sub-title">Soy el titulo</summary>
+                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
+                    eveniet
+                    consectetur
+                    quidem
+                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
+                    veritatis
+                    officiis dolorum officia.</p>
+                <div class="summary-details">
+                    Repositorio:
+                    <a href="/" class="links">
+                        https://github.com/leoncii/frontendMentor-bookmark
+                    </a>
+                    Url:
+                    <a href="/" class="links">
+                        https://leoncii.github.io/frontendMentor-bookmark
+                    </a>
+                </div>
+            </details>
         </div>
 
+        <div class="card">
+            <img src="/" alt="logo">
+            <details>
+                <summary class="sub-title">Soy el titulo</summary>
+                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
+                    eveniet
+                    consectetur
+                    quidem
+                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
+                    veritatis
+                    officiis dolorum officia.</p>
+                <div class="summary-details">
+                    Repositorio:
+                    <a href="/"> <span class="links">
+                            https://github.com/leoncii/frontendMentor-bookmark </a>
+                    </span>
+                    Url:
+                    <a href="/">
+                        <span class="links">
+                            https://leoncii.github.io/frontendMentor-bookmark/ </a>
+                    </span>
+                </div>
+            </details>
+        </div>
     </section>
     <section>
         <div class="wrapper">
@@ -537,7 +550,10 @@
 
     <section class="footer">
         <p>
-            By Leonardo with <img src="./image/hearth.svg" alt="">
+            Made by Leonardo with <img src="./image/hearth.svg" alt="">
+        </p>
+        <p>
+            Cochabamba-Bolivia
         </p>
     </section>
 
