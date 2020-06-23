@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>miiiiiiiiiiiiiiiiii JS</title>
-    <link rel="icon" href="./image/facebookcolor.svg">
+    <link rel="icon" href="./src/image/facebookcolor.svg">
 </head>
 <style>
     /* #ffcc00 warning yellow */
@@ -16,18 +16,25 @@
         margin: 0;
     }
 
+    html {
+        box-sizing: border-box;
+    }
+
     .header {
         display: flex;
         justify-content: space-between;
         position: sticky;
         top: 0;
+        align-items: center;
+        /* bottom: 50px; */
+        /* height: 75px; */
         background: #161e26;
         z-index: 99;
-        /* display: flex; */
-        /* justify-content: space-between; */
-        /* display: flex; */
-        /* justify-content: space-evenly; */
-        /* align-items: center; */
+        box-shadow: 0 0 5px 1px rgba(255, 255, 255, .6);
+    }
+
+    .header>span {
+        display: none;
     }
 
     ::selection {
@@ -66,7 +73,7 @@
     .menu-checkbox:checked~.header .menu-open {
         color: black;
         background: black;
-        background: url('./image/icon-close.svg') no-repeat center;
+        background: url('./src/image/icon-close.svg') no-repeat center;
     }
 
     .menu-checkbox:checked~.header .menu {
@@ -97,37 +104,37 @@
     }
 
     .social>a:nth-child(1) {
-        background: url('./image/facebook2.svg') no-repeat center;
+        background: url('./src/image/facebook2.svg') no-repeat center;
         width: 40px;
         height: 40px;
     }
 
     .social>a:nth-child(2) {
-        background: url('./image/github.svg') no-repeat center;
+        background: url('./src/image/github.svg') no-repeat center;
         width: 40px;
         height: 40px;
     }
 
     .social>a:nth-child(3) {
-        background: url('./image/linkedin.svg') no-repeat center;
+        background: url('./src/image/linkedin.svg') no-repeat center;
         width: 40px;
         height: 40px;
     }
 
     .menu-checkbox:checked~.header .social>a:nth-child(1) {
-        background: url('./image/facebookcolor.svg') no-repeat center;
+        background: url('./src/image/facebookcolor.svg') no-repeat center;
         width: 40px;
         height: 40px;
     }
 
     .menu-checkbox:checked~.header .social>a:nth-child(2) {
-        background: url('./image/githubcolor.svg') no-repeat center;
+        background: url('./src/image/githubcolor.svg') no-repeat center;
         width: 40px;
         height: 40px;
     }
 
     .menu-checkbox:checked~.header .social>a:nth-child(3) {
-        background: url('./image/linkedincolor.svg') no-repeat center;
+        background: url('./src/image/linkedincolor.svg') no-repeat center;
         width: 40px;
         height: 40px;
     }
@@ -152,7 +159,7 @@
         width: 35px;
         height: 35px;
         display: inline-flex;
-        background: url('./image/icon-hamburger.svg') no-repeat center;
+        background: url('./src/image/icon-hamburger.svg') no-repeat center;
     }
 
     a {
@@ -206,7 +213,7 @@
         border-right: 1px solid #000;
         animation: type 5s steps(16);
         white-space: nowrap;
-        color: yellow;
+        color: #ffcc00;
     }
 
     @keyframes type {
@@ -332,7 +339,7 @@
     }
 
     .social__icons {
-        background: url('./image/facebookcolor.svg') no-repeat center;
+        background: url('./src/image/facebookcolor.svg') no-repeat center;
         width: 40px;
         height: 40px;
     }
@@ -362,6 +369,7 @@
     }
 
     .footer {
+        background: #001;
         display: flex;
         /* justify-content: space-between; */
         place-content: center;
@@ -398,13 +406,68 @@
         margin: 10px auto;
     }
 
+    .contact {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #fff;
+        /* margin: 0 1em; */
+        width: 70%;
+        padding: 1em;
+        border-radius: 12px;
+        box-shadow: 0 0 20px 1px rgba(255, 255, 255, .2);
+        margin: 2em auto;
+        font-size: 1.3em;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .contact>h3 {
+        color: #ffcc00;
+    }
+
+    .contact>button {
+        border-radius: 10px;
+        border: none;
+        font-size: 1em;
+        margin: 2em;
+        color: #e535ab;
+        font-weight: 700;
+        letter-spacing: 2px;
+        box-shadow: 0 0 10px 1px rgb(255, 255, 255, .4);
+        padding: .7em;
+    }
+
+    .contact>button:hover {
+        transform: scale(1.1);
+    }
+
+    .living {
+        display: flex;
+        font-size: 1.7em;
+        position: relative;
+        margin: 0 auto;
+        top: 2em;
+        width: 70%;
+        color: #e535ab;
+        font-weight: 800;
+        letter-spacing: 2px;
+        background: #fff;
+        max-inline-size: fit-content;
+        padding: 1.5em;
+        border-radius: 1em;
+    }
+
     @media screen and (min-width: 600px) {
         .header {
             display: flex;
             justify-content: space-between;
-            margin: 1em;
-            padding: 1.2em;
+            /* margin: 1em; */
+            /* height: px; */
+            padding: .4em;
+        }
 
+        .header>span {
+            display: block;
         }
 
         .menu-open {
@@ -416,11 +479,11 @@
         }
 
         .cards {
-            display: flex;
-            flex-direction: row;
-            /* margin: 0; */
-            justify-content: center;
-            align-items: center;
+            margin: 0 auto;
+            place-items: center;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(220px, 1fr));
+            gap: 0 4em;
         }
 
         .card {
@@ -430,7 +493,21 @@
             min-width: -webkit-fill-available;
         }
 
+        .living {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 1.7em;
+            position: relative;
+            top: 2em;
+            color: #e535ab;
+            padding: 1.5em;
+            border-radius: 1em;
+        }
+
         .footer {
+            /* position: relative; */
+            padding-top: 5em;
             flex-direction: inherit;
             justify-content: space-evenly;
         }
@@ -441,6 +518,7 @@
     <input type="checkbox" id="open" class="menu-checkbox">
     <header class="header">
         <img src="" alt="LOGO">
+        <span>Leonardo Torrico</span>
         <div class="social" id='social__icons'>
             <a href="/">
                 <!-- <img class="header__social__img" style="border: 1px red solid;" src="./image/facebook2.svg" alt=""> </img> -->
@@ -457,7 +535,7 @@
             <ul class="open-menu__list">
                 <li><a href="">Esto solo es un menu o eso creemos...</a></li>
                 <li><a href="">No hay nada que ver aqui</a></li>
-                <li><a href=""> <img src="./image/law.svg" alt="hammer"> </a></li>
+                <li><a href=""> <img src="./src/image/law.svg" alt="hammer"> </a></li>
                 <li><a href="">Leonardo Torrico 🎉</a></li>
             </ul>
         </nav>
@@ -467,9 +545,10 @@
         <div class="hero__text">
             <!-- <h1>Leonardo Torrico</h1> -->
             <h1 class="leonardo" data-text="Leonardo Torrico">Leonardo Torrico</h1>
-            <h3 class="leonardo__subtitle">Desarrollador de aplicaciones web</h3>
+            <h3 class="leonardo__subtitle">Fron-end Development</h3>
+            <h3 class="leonardo__subtitle">Listo para convertir tus<i> sueños</i> en realidad</h3>
             <picture>
-                <img src="./image/facebookcolor.svg" alt="YO">
+                <img src="./src/image/facebookcolor.svg" alt="YO">
             </picture>
         </div>
     </section>
@@ -526,31 +605,142 @@
                 </div>
             </details>
         </div>
+
+        <div class="card">
+            <img src="/" alt="logo">
+            <details>
+                <summary class="sub-title">Soy el titulo</summary>
+                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
+                    eveniet
+                    consectetur
+                    quidem
+                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
+                    veritatis
+                    officiis dolorum officia.</p>
+                <div class="summary-details">
+                    Repositorio:
+                    <a href="/"> <span class="links">
+                            https://github.com/leoncii/frontendMentor-bookmark </a>
+                    </span>
+                    Url:
+                    <a href="/">
+                        <span class="links">
+                            https://leoncii.github.io/frontendMentor-bookmark/ </a>
+                    </span>
+                </div>
+            </details>
+        </div>
+
+        <div class="card">
+            <img src="/" alt="logo">
+            <details>
+                <summary class="sub-title">Soy el titulo</summary>
+                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
+                    eveniet
+                    consectetur
+                    quidem
+                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
+                    veritatis
+                    officiis dolorum officia.</p>
+                <div class="summary-details">
+                    Repositorio:
+                    <a href="/"> <span class="links">
+                            https://github.com/leoncii/frontendMentor-bookmark </a>
+                    </span>
+                    Url:
+                    <a href="/">
+                        <span class="links">
+                            https://leoncii.github.io/frontendMentor-bookmark/ </a>
+                    </span>
+                </div>
+            </details>
+        </div>
+
+        <div class="card">
+            <img src="/" alt="logo">
+            <details>
+                <summary class="sub-title">Soy el titulo</summary>
+                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
+                    eveniet
+                    consectetur
+                    quidem
+                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
+                    veritatis
+                    officiis dolorum officia.</p>
+                <div class="summary-details">
+                    Repositorio:
+                    <a href="/"> <span class="links">
+                            https://github.com/leoncii/frontendMentor-bookmark </a>
+                    </span>
+                    Url:
+                    <a href="/">
+                        <span class="links">
+                            https://leoncii.github.io/frontendMentor-bookmark/ </a>
+                    </span>
+                </div>
+            </details>
+        </div>
+
+        <div class="card">
+            <img src="/" alt="logo">
+            <details>
+                <summary class="sub-title">Soy el titulo</summary>
+                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
+                    eveniet
+                    consectetur
+                    quidem
+                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
+                    veritatis
+                    officiis dolorum officia.</p>
+                <div class="summary-details">
+                    Repositorio:
+                    <a href="/"> <span class="links">
+                            https://github.com/leoncii/frontendMentor-bookmark </a>
+                    </span>
+                    Url:
+                    <a href="/">
+                        <span class="links">
+                            https://leoncii.github.io/frontendMentor-bookmark/ </a>
+                    </span>
+                </div>
+            </details>
+        </div>
     </section>
+
+
+
     <section>
         <div class="wrapper">
-            <h2>Descripcion</h2>
+            <h2>Hola soy Leonardo...</h2>
             <p class="u-p">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni aspernatur excepturi necessitatibus,
-                id laborum molestias illum cum laboriosam natus! Voluptas quae accusantium at nesciunt in dolorum nam
-                officiis quaerat!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem magni aspernatur excepturi necessitatibus,
-                id laborum molestias illum cum laboriosam natus! Voluptas quae accusantium at nesciunt in dolorum nam
-                officiis quaerat!
+
             </p>
             <h2>Tecnologias:</h2>
             <div class="tecnologias">
-                <img src="./image/html.svg" alt="html">
-                <img src="./image/js.svg" alt="javascript">
-                <img src="./image/css.svg" alt="css">
-                <img src="./image/react.svg" alt="react">
+                <img src="./src/image/html.svg" alt="html">
+                <img src="./src/image/js.svg" alt="javascript">
+                <img src="./src/image/css.svg" alt="css">
+                <img src="./src/image/react.svg" alt="react">
             </div>
         </div>
     </section>
 
+    <section class="contact">
+        <h3>Empezar un projecto</h3>
+        <p><strong>Interesado en trabajar juntos?</strong> <small>Deberiamos ponernos en contacto,<strong> Yo invito el
+                    cafe.</strong>
+            </small> </p>
+        <button>Hagamoslo</button>
+    </section>
+
+    <div class="living">
+        Viviendo, aprendiendo un paso cada dia.
+    </div>
+
+
     <section class="footer">
         <p>
-            Made by Leonardo with <img src="./image/hearth.svg" alt="">
+            Made by Leonardo with <img src="./src/image/hearth.svg" alt="">
         </p>
         <p>
             Cochabamba-Bolivia
@@ -558,8 +748,8 @@
     </section>
 
     <!-- <script src="./js/particles.min.js"></script> -->
-    <script src="./js/particles.js"></script>
-    <script src="./js/culo.js"></script>
+    <script src="./src/js/particles.js"></script>
+    <script src="./src/js/culo.js"></script>
 </body>
 
 </html>
