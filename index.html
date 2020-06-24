@@ -354,7 +354,8 @@
     }
 
     .links {
-        font-size: .8em;
+        font-size: .9em;
+        letter-spacing: 1px;
     }
 
     .links:hover {
@@ -377,6 +378,7 @@
         flex-direction: column-reverse;
         align-items: center;
         margin: 0 auto;
+        padding-top: 10em;
     }
 
     .footer>p {
@@ -409,8 +411,9 @@
     .contact {
         display: flex;
         flex-direction: column;
-        border: 1px solid #fff;
+        border: .6px solid #fff;
         /* margin: 0 1em; */
+        text-align-last: center;
         width: 70%;
         padding: 1em;
         border-radius: 12px;
@@ -422,24 +425,116 @@
     }
 
     .contact>h3 {
-        color: #ffcc00;
+        color: #ffdf1b;
+
     }
 
-    .contact>button {
-        border-radius: 10px;
-        border: none;
-        font-size: 1em;
-        margin: 2em;
-        color: #e535ab;
-        font-weight: 700;
-        letter-spacing: 2px;
+    .call-to-action {
+        /* margin: 5em auto; */
+        display: flex;
+        border: 1px solid red;
+        /* padding: 1em; */
+        justify-content: flex-start;
+        align-items: center;
+        margin: 15px auto 20px auto;
+        width: 280px;
+        height: 44px;
+        border-radius: 2px;
+
+    }
+
+    .call-to-action>a {
+        /* border: none; */
+        position: relative;
+        background-color: #ffdf1b;
+        display: flex;
         box-shadow: 0 0 10px 1px rgb(255, 255, 255, .4);
-        padding: .7em;
+        /* padding: .7em; */
+        width: 100%;
+        flex-direction: column;
+        height: 100%;
+        color: #fff;
+        padding: 0 10px;
+        border-radius: 2px;
+        justify-content: center;
+        height: 44px;
+        overflow: hidden;
     }
 
-    .contact>button:hover {
-        transform: scale(1.1);
+    .call-to-action-animation {
+        position: absolute;
+        /* color: #e535ab; */
+        height: 50px;
+        top: 0;
+        width: 194px;
+        /* background-color: red; */
+        animation: call-to-action 3.4s ease-in-out infinite alternate;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
     }
+
+    @keyframes call-to-action {
+        0% {
+            -webkit-transform: translateX(-210px);
+            transform: translateX(-210px);
+        }
+
+        59% {
+            -webkit-transform: translateX(-210px);
+            transform: translateX(-210px);
+
+        }
+
+        78% {
+            -webkit-transform: translateX(280px);
+            transform: translateX(280px);
+
+        }
+
+        85% {
+            -webkit-transform: translateX(280px);
+            transform: translateX(280px);
+        }
+
+        100% {
+            -webkit-transform: translateX(-210px);
+            transform: translateX(-210px);
+        }
+    }
+
+    .call-to-action-animation:before {
+        content: '';
+        /* animation: call-to-action 3.4s ease-in-out infinite; */
+        position: absolute;
+        top: 0px;
+        left: 40px;
+        height: 50px;
+        -webkit-transform: skew(-40deg);
+        width: 95px;
+        transform: skew(-40deg);
+        /* background: white; */
+        background-color: rgba(255, 255, 255, .3);
+    }
+
+    .call-to-action-animation::after {
+        content: '';
+        position: absolute;
+        /* animation: call-to-action 3.4s ease-in-out infinite; */
+        width: 20px;
+        top: 0px;
+        /* left: 80px; */
+        right: 22px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, .3);
+        transform: skew(-40deg);
+        -webkit-transform: skew(-40deg);
+    }
+
+
 
     .living {
         display: flex;
@@ -448,7 +543,8 @@
         margin: 0 auto;
         top: 2em;
         width: 70%;
-        color: #e535ab;
+        text-align: center;
+        color: #161e26;
         font-weight: 800;
         letter-spacing: 2px;
         background: #fff;
@@ -500,14 +596,13 @@
             font-size: 1.7em;
             position: relative;
             top: 2em;
-            color: #e535ab;
             padding: 1.5em;
             border-radius: 1em;
         }
 
         .footer {
             /* position: relative; */
-            padding-top: 5em;
+            padding-top: 7em;
             flex-direction: inherit;
             justify-content: space-evenly;
         }
@@ -546,7 +641,7 @@
             <!-- <h1>Leonardo Torrico</h1> -->
             <h1 class="leonardo" data-text="Leonardo Torrico">Leonardo Torrico</h1>
             <h3 class="leonardo__subtitle">Fron-end Development</h3>
-            <h3 class="leonardo__subtitle">Listo para convertir tus<i> sueños</i> en realidad</h3>
+            <h3 class="leonardo__subtitle">Convierte tus<i> sueños</i> en realidad</h3>
             <picture>
                 <img src="./src/image/facebookcolor.svg" alt="YO">
             </picture>
@@ -560,22 +655,25 @@
         <div class="card">
             <img src="/" alt="logo">
             <details>
-                <summary class="sub-title">Soy el titulo</summary>
-                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
-                    eveniet
-                    consectetur
-                    quidem
-                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
-                    veritatis
-                    officiis dolorum officia.</p>
+                <summary class="sub-title">Rock, paper and scissors</summary>
+                <p class="u-p">
+                    Piedra, papel y tijeras es una aplicacion sacada de frontendmentor.io
+                    que replica al tipico juego de manos.
+                </p>
                 <div class="summary-details">
                     Repositorio:
-                    <a href="/" class="links">
-                        https://github.com/leoncii/frontendMentor-bookmark
+                    <a href="https://github.com/leoncii/FrontendMentor-rock-paper-scissors">
+                        <span class="links">
+                            https://github.com/leoncii/Frontend
+                            Mentor-rock-paper-scissors
+                        </span>
                     </a>
                     Url:
-                    <a href="/" class="links">
-                        https://leoncii.github.io/frontendMentor-bookmark
+                    <a href="https://leoncii.github.io/FrontendMentor-rock-paper-scissors/">
+                        <span class="links">
+                            https://leoncii.github.io/Frontend
+                            Mentor-rock-paper-scissors/
+                        </span>
                     </a>
                 </div>
             </details>
@@ -584,24 +682,27 @@
         <div class="card">
             <img src="/" alt="logo">
             <details>
-                <summary class="sub-title">Soy el titulo</summary>
-                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
-                    eveniet
-                    consectetur
-                    quidem
-                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
-                    veritatis
-                    officiis dolorum officia.</p>
+                <summary class="sub-title">Podcast</summary>
+                <p class="u-p">
+                    Es una applicacion para escuchar podcasts que utiliza
+                    el API de audioboom es uno de los proveedores mas
+                    populares de podcasts gratuitos y ademas podemos escuchar los ultimos podcasts
+                    tanto latinos como en ingles la app cuenta con varias vistas
+                    y nos permite acceder a todos los canales.
+                </p>
                 <div class="summary-details">
                     Repositorio:
-                    <a href="/"> <span class="links">
-                            https://github.com/leoncii/frontendMentor-bookmark </a>
-                    </span>
-                    Url:
-                    <a href="/">
+                    <a href="https://github.com/leoncii/next-podcast">
                         <span class="links">
-                            https://leoncii.github.io/frontendMentor-bookmark/ </a>
-                    </span>
+                            https://github.com/leoncii/next-podcast
+                        </span>
+                    </a>
+                    Url:
+                    <a href="https://podcast.leoncii.now.sh" target="_blank">
+                        <span class="links">
+                            https://podcast.leoncii.now.sh
+                        </span>
+                    </a>
                 </div>
             </details>
         </div>
@@ -609,24 +710,26 @@
         <div class="card">
             <img src="/" alt="logo">
             <details>
-                <summary class="sub-title">Soy el titulo</summary>
-                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
-                    eveniet
-                    consectetur
-                    quidem
-                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
-                    veritatis
-                    officiis dolorum officia.</p>
+                <summary class="sub-title">Giffy</summary>
+                <p class="u-p">
+                    Giffy es una app que utiliza el API de https://giphy.com/ cuanta con
+                    un barra de busqueda por categorias, y nos mustra los ultimos giffs en
+                    tendencias y lo mas importante esta configurado para una buena experiencia
+                    de usuario.
+                </p>
                 <div class="summary-details">
                     Repositorio:
-                    <a href="/"> <span class="links">
-                            https://github.com/leoncii/frontendMentor-bookmark </a>
-                    </span>
-                    Url:
-                    <a href="/">
+                    <a href="https://github.com/leoncii/giffy">
                         <span class="links">
-                            https://leoncii.github.io/frontendMentor-bookmark/ </a>
-                    </span>
+                            https://github.com/leoncii/giffy
+                        </span>
+                    </a>
+                    Url:
+                    <a href="https://giffy.leoncii.now.sh/">
+                        <span class="links">
+                            https://giffy.leoncii.now.sh/
+                        </span>
+                    </a>
                 </div>
             </details>
         </div>
@@ -634,24 +737,26 @@
         <div class="card">
             <img src="/" alt="logo">
             <details>
-                <summary class="sub-title">Soy el titulo</summary>
-                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
-                    eveniet
-                    consectetur
-                    quidem
-                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
-                    veritatis
-                    officiis dolorum officia.</p>
+                <summary class="sub-title">Bookmark</summary>
+                <p class="u-p">
+                    Este es otro projecto sacado de frontendMentor.io una sencilla
+                    pero bonita landing page hecha solo con html, css, y js.
+                </p>
                 <div class="summary-details">
                     Repositorio:
-                    <a href="/"> <span class="links">
-                            https://github.com/leoncii/frontendMentor-bookmark </a>
-                    </span>
-                    Url:
-                    <a href="/">
+                    <a href="https://github.com/leoncii/frontendMentor-bookmark">
                         <span class="links">
-                            https://leoncii.github.io/frontendMentor-bookmark/ </a>
-                    </span>
+                            https://github.com/leoncii/frontend
+                            Mentor-bookmark
+                        </span>
+                    </a>
+                    Url:
+                    <a href="https://leoncii.github.io/frontendMentor-bookmark/">
+                        <span class="links">
+                            https://leoncii.github.io/frontend
+                            Mentor-bookmark/
+                        </span>
+                    </a>
                 </div>
             </details>
         </div>
@@ -713,7 +818,7 @@
         <div class="wrapper">
             <h2>Hola soy Leonardo...</h2>
             <p class="u-p">
-
+                ...
             </p>
             <h2>Tecnologias:</h2>
             <div class="tecnologias">
@@ -726,11 +831,17 @@
     </section>
 
     <section class="contact">
-        <h3>Empezar un projecto</h3>
-        <p><strong>Interesado en trabajar juntos?</strong> <small>Deberiamos ponernos en contacto,<strong> Yo invito el
-                    cafe.</strong>
-            </small> </p>
-        <button>Hagamoslo</button>
+        <h3>Hablemos </h3>
+        <p>
+            <strong>Tienes algun projecto o alguna pregunta no dudes en ponerte en contacto!</strong>
+            <strong> Yo te invito el cafe 🎉</strong>
+        </p>
+        <div class="call-to-action">
+            <a href="./contact.html" style="background-color: #ffdf1b;">
+                <div class="call-to-action-animation"></div>
+                Do it
+            </a>
+        </div>
     </section>
 
     <div class="living">
