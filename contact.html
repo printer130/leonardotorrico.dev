@@ -17,8 +17,9 @@
 
   label {
     display: block;
-    margin: .6em auto;
+    /* margin: .6em auto; */
   }
+
   input {
     width: 220px;
     height: 15px;
@@ -26,10 +27,155 @@
     letter-spacing: 1px;
     border-radius: 2px;
     border: none;
-    
-  }
-  
 
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    /* bottom: 50px; */
+    height: 60px;
+    background: #161e26;
+    z-index: 99;
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, .6);
+  }
+
+  .header>span {
+    display: none;
+  }
+
+  ::selection {
+    background: #ffcc00;
+  }
+
+  .menu {
+    /* margin: 10px; */
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 999;
+  }
+
+  .menu-checkbox {
+    display: none;
+  }
+
+  .menu-checkbox:checked~.header .menu-open {
+    color: black;
+    background: black;
+    background: url('./src/image/icon-close.svg') no-repeat center;
+  }
+
+  .menu-checkbox:checked~.header .menu {
+    display: block;
+    text-align: center;
+  }
+
+  .menu-checkbox:checked~.header {
+    background-color: rgba(0, 0, 0, .8);
+  }
+
+  .open-menu__list li a:hover {
+    /* border: 1px red solid; */
+    transform: scale(1.2);
+    color: #ffcc00;
+  }
+
+  .social>a:nth-child(1):hover {
+    transform: scale(1.2);
+  }
+
+  .social>a:nth-child(2):hover {
+    transform: scale(1.2);
+  }
+
+  .social>a:nth-child(3):hover {
+    transform: scale(1.2);
+  }
+
+  .social>a:nth-child(1) {
+    background: url('./src/image/facebook2.svg') no-repeat center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .social>a:nth-child(2) {
+    background: url('./src/image/github.svg') no-repeat center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .social>a:nth-child(3) {
+    background: url('./src/image/linkedin.svg') no-repeat center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-checkbox:checked~.header .social>a:nth-child(1) {
+    background: url('./src/image/facebookcolor.svg') no-repeat center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-checkbox:checked~.header .social>a:nth-child(2) {
+    background: url('./src/image/githubcolor.svg') no-repeat center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-checkbox:checked~.header .social>a:nth-child(3) {
+    background: url('./src/image/linkedincolor.svg') no-repeat center;
+    width: 40px;
+    height: 40px;
+  }
+
+  ul {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    /* border-top: rgba(255, 255, 255, .1); */
+    /* border-top: blueviolet; */
+    border-top-style: double;
+
+  }
+  h3 {
+    padding: 0;
+    /* margin: 0; */
+    margin: 2em auto;
+    letter-spacing: 2px;
+    font-size: 1.1em;
+    padding: 0 2em;
+    text-align: center;
+  }
+
+  .menu-open {
+    /* color: black; */
+    /* border: solid red 1px; */
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    background: url('./src/image/icon-hamburger.svg') no-repeat center;
+  }
+  .hero {
+    background: #222;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    
+    /* padding: 2em auto; */
+  }
 
   .form {
     /* background-color: #ffdf1b; */
@@ -62,8 +208,12 @@
     /* border: none; */
     position: relative;
     background-color: #ffdf1b;
+    text-decoration: none;
+    font-size: 1.2em;
+    letter-spacing: 3px;
+    font-weight: 600;
     display: flex;
-    box-shadow: 0 0 10px 1px rgb(255, 255, 255, .4);
+    box-shadow: 0 0 10px 1px rgb(255, 255, 255, .04);
     /* padding: .7em; */
     width: 100%;
     flex-direction: column;
@@ -151,12 +301,34 @@
 </style>
 
 <body>
-  <section class="navbar">
-    <img src="" alt="Logo">
-    <h3>Get ready to turn <i>dreams</i>into reality</h3>
-    <menu>
-      Menu
-    </menu>
+  <input type="checkbox" id="open" class="menu-checkbox">
+  <header class="header">
+    <img src="" alt="LOGO">
+    <span>Leonardo Torrico</span>
+    <div class="social" id='social__icons'>
+      <a href="/">
+        <!-- <img class="header__social__img" style="border: 1px red solid;" src="./image/facebook2.svg" alt=""> </img> -->
+      </a>
+      <a href="/">
+        <!-- <img style="border: 1px red solid;" src="./image/github.svg" alt=""> -->
+      </a>
+      <a href="/">
+        <!-- <img style="border: 1px red solid;" src="./image/linkedin.svg" alt=""> -->
+      </a>
+    </div>
+    <label for="open" class="menu-open"></label>
+    <nav class="menu">
+      <ul class="open-menu__list">
+        <li><a href="">Esto solo es un menu o eso creemos...</a></li>
+        <li><a href="">No hay nada que ver aqui</a></li>
+        <li><a href=""> <img src="./src/image/law.svg" alt="hammer"> </a></li>
+        <li><a href="">Leonardo Torrico 🎉</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h3>Get ready to turn your <i>dreams</i> into reality</h3>
   </section>
 
   <section class="form">
