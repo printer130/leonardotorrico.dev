@@ -164,6 +164,7 @@
         height: 35px;
         display: inline-flex;
         background: url('./src/image/icon-hamburger.svg') no-repeat center;
+        /* background: url('https://res.cloudinary.com/djc1umong/image/upload/v1593411699/rock_vanaqh.png') no-repeat center; */
     }
 
     a {
@@ -339,6 +340,7 @@
     }
 
     .social__icons {
+        /* background: url('./src/image/facebookcolor.svg') no-repeat center; */
         background: url('./src/image/facebookcolor.svg') no-repeat center;
         width: 40px;
         height: 40px;
@@ -385,7 +387,7 @@
         color: aliceblue;
     }
 
-    
+
     .contact {
         display: flex;
         flex-direction: column;
@@ -543,6 +545,44 @@
         border-radius: 1em;
     }
 
+    .images {
+        width: 320px;
+        contain: content;
+    }
+
+    .images_1 {
+        background-image: url("https://res.cloudinary.com/djc1umong/image/upload/v1593411699/rock_vanaqh.png");
+        height: 130px;
+        background-repeat: no-repeat;
+        object-fit: contain;
+        background-size: contain;
+        border-radius: 3px;
+    }
+    .images_2 {
+        background-image: url("https://res.cloudinary.com/djc1umong/image/upload/v1593403453/podcast_djp7zn.png");
+        height: 130px;
+        background-repeat: no-repeat;
+        object-fit: contain;
+        background-size: contain;
+        border-radius: 3px;
+    }
+    .images_3 {
+        background-image: url("https://res.cloudinary.com/djc1umong/image/upload/v1593411943/giffy_ow1x7a.png");
+        height: 130px;
+        background-repeat: no-repeat;
+        object-fit: contain;
+        background-size: contain;
+        border-radius: 3px;
+    }
+    .images_4 {
+        background-image: url("https://res.cloudinary.com/djc1umong/image/upload/v1593411257/bookmark_jn4ldp.png");
+        height: 130px;
+        background-repeat: no-repeat;
+        object-fit: contain;
+        background-size: contain;
+        border-radius: 3px;
+    }
+
     @media screen and (min-width: 600px) {
         .header {
             display: flex;
@@ -605,13 +645,13 @@
         <img src="" alt="LOGO">
         <span>Leonardo Torrico</span>
         <div class="social" id='social__icons'>
-            <a href="/">
+            <a href="https://facebook.com/letobev" target="blank">
                 <!-- <img class="header__social__img" style="border: 1px red solid;" src="./image/facebook2.svg" alt=""> </img> -->
             </a>
-            <a href="/">
+            <a href="https://github.com/leoncii" target="blank">
                 <!-- <img style="border: 1px red solid;" src="./image/github.svg" alt=""> -->
             </a>
-            <a href="/">
+            <a href="https://linkedin.com/leoncii" target="blank">
                 <!-- <img style="border: 1px red solid;" src="./image/linkedin.svg" alt=""> -->
             </a>
         </div>
@@ -642,7 +682,8 @@
     <h1 class="realizados">Portfolio</h1>
     <section class="cards">
         <div class="card">
-            <img src="/" alt="logo">
+            <!-- <img class="images_1" src="" /> -->
+            <div class="images_1"></div>
             <details>
                 <summary class="sub-title">Rock, paper and scissors</summary>
                 <p class="u-p">
@@ -669,7 +710,9 @@
         </div>
 
         <div class="card">
-            <img src="/" alt="logo">
+            <!-- <img class="images" src="https://res.cloudinary.com/djc1umong/image/upload/v1593403453/podcast_djp7zn.png"
+                alt="logo"> -->
+                <div class="images_2"></div>
             <details>
                 <summary class="sub-title">Podcast</summary>
                 <p class="u-p">
@@ -697,7 +740,9 @@
         </div>
 
         <div class="card">
-            <img src="/" alt="logo">
+            <!-- <img class="images" src="https://res.cloudinary.com/djc1umong/image/upload/v1593411943/giffy_ow1x7a.png"
+                alt="logo"> -->
+                <div class="images_3"></div>
             <details>
                 <summary class="sub-title">Giffy</summary>
                 <p class="u-p">
@@ -724,7 +769,9 @@
         </div>
 
         <div class="card">
-            <img src="/" alt="logo">
+            <!-- <img class="images" src="https://res.cloudinary.com/djc1umong/image/upload/v1593411257/bookmark_jn4ldp.png"
+                alt="logo"> -->
+                <div class="images_4"></div>
             <details>
                 <summary class="sub-title">Bookmark</summary>
                 <p class="u-p">
@@ -775,37 +822,11 @@
             </details>
         </div>
 
-        <div class="card">
-            <img src="/" alt="logo">
-            <details>
-                <summary class="sub-title">Soy el titulo</summary>
-                <p class="u-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque impedit soluta
-                    eveniet
-                    consectetur
-                    quidem
-                    ullam laudantium ipsum molestias eos voluptas incidunt tenetur amet illum, animi facere
-                    veritatis
-                    officiis dolorum officia.</p>
-                <div class="summary-details">
-                    Repositorio:
-                    <a href="/"> <span class="links">
-                            https://github.com/leoncii/frontendMentor-bookmark </a>
-                    </span>
-                    Url:
-                    <a href="/">
-                        <span class="links">
-                            https://leoncii.github.io/frontendMentor-bookmark/ </a>
-                    </span>
-                </div>
-            </details>
-        </div>
     </section>
-
-
 
     <section>
         <div class="wrapper">
-           
+
             <h2>Tecnologias:</h2>
             <div class="tecnologias">
                 <img src="./src/image/html.svg" alt="html">
