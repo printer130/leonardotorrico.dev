@@ -12,11 +12,15 @@
     margin: 0;
     color: #fff;
     width: 100%;
-    /* height: 100vh; */
+    /* height: 80vh; */
+    /* max-height: 100vh; */
+    /* min-height: 100vh; */
+    min-height: 100vh;
   }
 
   label {
     display: block;
+    margin: .3em;
     /* margin: .6em auto; */
   }
 
@@ -148,9 +152,9 @@
     border-top-style: double;
 
   }
+
   h3 {
     padding: 0;
-    /* margin: 0; */
     margin: 2em auto;
     letter-spacing: 2px;
     font-size: 1.1em;
@@ -167,13 +171,14 @@
     display: inline-flex;
     background: url('./src/image/icon-hamburger.svg') no-repeat center;
   }
+
   .hero {
     background: #222;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    
+
     /* padding: 2em auto; */
   }
 
@@ -298,12 +303,30 @@
     transform: skew(-40deg);
     -webkit-transform: skew(-40deg);
   }
+
+  .footer {
+    background: #001;
+    display: flex;
+    /* justify-content: space-between; */
+    place-content: center;
+    height: 125px;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 2em;
+  }
+
+  .footer>p {
+    color: aliceblue;
+  }
 </style>
 
 <body>
   <input type="checkbox" id="open" class="menu-checkbox">
   <header class="header">
-    <img src="" alt="LOGO">
+    <a href="/">
+      <img src="/" alt="LOGO">
+    </a>
     <span>Leonardo Torrico</span>
     <div class="social" id='social__icons'>
       <a href="/">
@@ -351,6 +374,14 @@
         </a>
       </div>
     </form>
+  </section>
+  <section class="footer">
+    <p>
+      Made by Leonardo with <img src="./src/image/hearth.svg" alt="">
+    </p>
+    <p>
+      Cochabamba-Bolivia
+    </p>
   </section>
 </body>
 
