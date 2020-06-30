@@ -209,8 +209,10 @@
 
   }
 
-  .call-to-action>a {
+  .call-to-action>button {
     /* border: none; */
+    border: none;
+    align-items: center;
     position: relative;
     background-color: #ffdf1b;
     text-decoration: none;
@@ -220,9 +222,10 @@
     display: flex;
     box-shadow: 0 0 10px 1px rgb(255, 255, 255, .04);
     /* padding: .7em; */
-    width: 100%;
+    width: 84%;
     flex-direction: column;
     height: 100%;
+    margin: 0 auto;
     color: #fff;
     padding: 0 10px;
     border-radius: 2px;
@@ -356,22 +359,21 @@
 
   <section class="form">
     <h2>Estoy emocionado por saber de tu proyecto. <strong><i>Listo para empezar?</i></strong> </h2>
-    <form action="">
+    <form id="form">
 
       <label for="name">Name</label>
-      <input type="text" name="name" id="name">
+      <input type="text" name="name" id="name" value="">
 
       <label for="email">Email</label>
-      <input type="text" name="email" id="email">
+      <input type="text" name="email" id="email" value="">
 
       <label for="delalles">Detalles Adicionales:</label>
-      <input type="text" name="detalles" id="">
-
+      <input type="text" name="detalles" id="detalles" value="">
       <div class="call-to-action">
-        <a href="./contact.html" style="background-color: #ffdf1b;">
+        <button href="./contact.html" style="background-color: #ffdf1b;" type="submit">
           <div class="call-to-action-animation"></div>
-          Do it
-        </a>
+          Submit
+        </button>
       </div>
     </form>
   </section>
@@ -383,6 +385,47 @@
       Cochabamba-Bolivia
     </p>
   </section>
+  <script type="module">
+    function handleClic() {
+      console.log('clic')
+    }
+    console.log('asdasd')
+    const form = document.getElementById('form')
+    const name = document.getElementById('name')
+    const email = document.getElementById('email')
+    const detalles = document.getElementById('detalles')
+    name.onchange = handleChange
+    email.onchange = handleChange
+    detalles.onchange = handleChange
+
+    form.onsubmit = handleSubmit
+    function handleChange(e) {
+      // console.log(e.target.value)
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault()
+      const { target } = e
+      // let submit = {
+      //   name: target[0].value,
+      //   email: target[1].value,
+      //   detalles: target[2].value
+      // }
+      const name = target[0].value
+      const email = target[1].value
+      const detalles = target[2].value
+      // console.log(submit)
+      fetch('http://localhost:8888/form', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, detalles })
+      })
+    }
+  </script>
 </body>
+
 
 </html>
