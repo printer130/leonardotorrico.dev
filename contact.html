@@ -12,6 +12,7 @@
     margin: 0;
     color: #fff;
     width: 100%;
+    min-width: 410px;
     /* height: 80vh; */
     /* max-height: 100vh; */
     /* min-height: 100vh; */
@@ -322,13 +323,21 @@
   .footer>p {
     color: aliceblue;
   }
+  .fnleo {
+        background-image: url('https://res.cloudinary.com/djc1umong/image/upload/v1593562382/fnleo_ecqmyt.png');
+        width: 110px;
+        height: -webkit-fill-available;
+        background-size: cover;
+        background-origin: border-box;
+        background-position: center;
+        cursor: pointer;
+    }
 </style>
 
 <body>
   <input type="checkbox" id="open" class="menu-checkbox">
   <header class="header">
-    <a href="/">
-      <img src="/" alt="LOGO">
+    <a class="fnleo">
     </a>
     <span>Leonardo Torrico</span>
     <div class="social" id='social__icons'>
@@ -386,36 +395,20 @@
     </p>
   </section>
   <script type="module">
-    function handleClic() {
-      console.log('clic')
-    }
-    console.log('asdasd')
     const form = document.getElementById('form')
     const name = document.getElementById('name')
     const email = document.getElementById('email')
     const detalles = document.getElementById('detalles')
-    name.onchange = handleChange
-    email.onchange = handleChange
-    detalles.onchange = handleChange
 
     form.onsubmit = handleSubmit
-    function handleChange(e) {
-      // console.log(e.target.value)
-    }
 
     function handleSubmit(e) {
       e.preventDefault()
       const { target } = e
-      // let submit = {
-      //   name: target[0].value,
-      //   email: target[1].value,
-      //   detalles: target[2].value
-      // }
       const name = target[0].value
       const email = target[1].value
       const detalles = target[2].value
-      // console.log(submit)
-      fetch('http://localhost:8888/form', {
+      fetch('http://localhost:8888/api/form', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
@@ -423,6 +416,14 @@
         },
         body: JSON.stringify({ name, email, detalles })
       })
+      clearValues()
+    }
+    function clearValues() {
+      name.value = ''
+      email.value = ''
+      detalles.value = ''
+      window.location.pathname = '/'
+      window.location.href = '/'
     }
   </script>
 </body>

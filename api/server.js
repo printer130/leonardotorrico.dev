@@ -6,7 +6,7 @@ const app = new Application()
 const router = new Router()
 
 router
-  .post('/form', async ctx => {
+  .post('/api/form', async ctx => {
     const { value } = await ctx.request.body()
     const data = await insertId(value)
     ctx.response.body = data

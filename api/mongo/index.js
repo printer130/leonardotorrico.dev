@@ -19,5 +19,6 @@ const contact = db.collection('contact')
 
 export const insertId = async (data) => {
   // console.log(JSON.parse(data))
-  await contact.insertOne(JSON.parse(data))
+  console.log(data)
+  await contact.insertOne(data)
 }

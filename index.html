@@ -48,6 +48,7 @@
     body {
         margin: 0;
         height: 200vh;
+        min-width: 410px;
         color: white;
         /* background: #18121e; */
         /* background: #1d2731; */
@@ -586,6 +587,16 @@
         border-radius: 3px;
     }
 
+    .fnleo {
+        background-image: url('https://res.cloudinary.com/djc1umong/image/upload/v1593562382/fnleo_ecqmyt.png');
+        width: 110px;
+        height: -webkit-fill-available;
+        background-size: cover;
+        background-origin: border-box;
+        background-position: center;
+        cursor: pointer;
+    }
+
     @media screen and (min-width: 600px) {
         .header {
             display: flex;
@@ -645,7 +656,8 @@
 <body class="body">
     <input type="checkbox" id="open" class="menu-checkbox">
     <header class="header">
-        <img src="" alt="LOGO">
+        <a class="fnleo"></a>
+        <!-- <img class="fnleo" src="https://res.cloudinary.com/djc1umong/image/upload/v1593562382/fnleo_ecqmyt.png" alt="LOGO"> -->
         <span>Leonardo Torrico</span>
         <div class="social" id='social__icons'>
             <a href="https://facebook.com/letobev" target="blank">
@@ -661,17 +673,15 @@
         <label for="open" class="menu-open"></label>
         <nav class="menu">
             <ul class="open-menu__list">
-                <li><a href="">Esto solo es un menu o eso creemos...</a></li>
-                <li><a href="">No hay nada que ver aqui</a></li>
+                <li><a href="/contact.html">Contact</a></li>
                 <li><a href=""> <img src="./src/image/law.svg" alt="hammer"> </a></li>
-                <li><a href="">Leonardo Torrico 🎉</a></li>
+                <li>Leonardo Torrico 🎉</li>
             </ul>
         </nav>
     </header>
     <section class="hero">
         <div class="particles" id="particles-js"></div>
         <div class="hero__text">
-            <!-- <h1>Leonardo Torrico</h1> -->
             <h1 class="leonardo" data-text="hola, soy Leonardo.">Hola, soy Leonardo.</h1>
             <h3 class="leonardo__subtitle">Soy desarrollador Front-end</h3>
 
@@ -685,7 +695,6 @@
     <h1 class="realizados">Portfolio</h1>
     <section class="cards">
         <div class="card">
-            <!-- <img class="images_1" src="" /> -->
             <div class="images_1"></div>
             <details>
                 <summary class="sub-title">Rock, paper and scissors</summary>
@@ -713,8 +722,6 @@
         </div>
 
         <div class="card">
-            <!-- <img class="images" src="https://res.cloudinary.com/djc1umong/image/upload/v1593403453/podcast_djp7zn.png"
-                alt="logo"> -->
             <div class="images_2"></div>
             <details>
                 <summary class="sub-title">Podcast</summary>
@@ -743,8 +750,6 @@
         </div>
 
         <div class="card">
-            <!-- <img class="images" src="https://res.cloudinary.com/djc1umong/image/upload/v1593411943/giffy_ow1x7a.png"
-                alt="logo"> -->
             <div class="images_3"></div>
             <details>
                 <summary class="sub-title">Giffy</summary>
@@ -772,8 +777,6 @@
         </div>
 
         <div class="card">
-            <!-- <img class="images" src="https://res.cloudinary.com/djc1umong/image/upload/v1593411257/bookmark_jn4ldp.png"
-                alt="logo"> -->
             <div class="images_4"></div>
             <details>
                 <summary class="sub-title">Bookmark</summary>
@@ -842,7 +845,6 @@
         </p>
     </section>
 
-    <!-- <script src="./js/particles.min.js"></script> -->
     <script src="./src/js/particles.js"></script>
     <script src="./src/js/culo.js"></script>
     <script type="module" src="./api/server.js"></script>
