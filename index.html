@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>miiiiiiiiiiiiiiiiii JS</title>
-    <link rel="icon" href="./src/image/facebookcolor.svg">
+    <title>leonardo</title>
+    <link rel="icon" style="height: 100px;"
+        href="https://res.cloudinary.com/djc1umong/image/upload/v1593562382/fnleo_ecqmyt.png">
 </head>
 <style>
     /* #ffcc00 warning yellow */
@@ -48,14 +49,10 @@
     body {
         margin: 0;
         height: 200vh;
-        min-width: 410px;
+        min-width: 100%;
         color: white;
-        /* background: #18121e; */
-        /* background: #1d2731; */
-        /* background: #0a1612; */
         background: #161e26;
         overscroll-behavior: none;
-        /* overscroll-behavior-x: none; */
         overflow-x: hidden;
     }
 
@@ -378,10 +375,16 @@
         /* justify-content: space-between; */
         place-content: center;
         height: 125px;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: center;
         margin: 0 auto;
-        padding-top: 10em;
+        padding-top: 14em;
+        padding-bottom: 14em;
+    }
+
+    .footer>div {
+        margin: 2em auto;
+        border: 3px;
     }
 
     .footer>p {
@@ -647,6 +650,8 @@
         .footer {
             /* position: relative; */
             padding-top: 7em;
+            /* display: flex;
+            flex-direction: column; */
             flex-direction: inherit;
             justify-content: space-evenly;
         }
@@ -656,7 +661,7 @@
 <body class="body">
     <input type="checkbox" id="open" class="menu-checkbox">
     <header class="header">
-        <a class="fnleo"></a>
+        <a href="/" class="fnleo"></a>
         <!-- <img class="fnleo" src="https://res.cloudinary.com/djc1umong/image/upload/v1593562382/fnleo_ecqmyt.png" alt="LOGO"> -->
         <span>Leonardo Torrico</span>
         <div class="social" id='social__icons'>
@@ -720,7 +725,6 @@
                 </div>
             </details>
         </div>
-
         <div class="card">
             <div class="images_2"></div>
             <details>
@@ -748,7 +752,6 @@
                 </div>
             </details>
         </div>
-
         <div class="card">
             <div class="images_3"></div>
             <details>
@@ -775,7 +778,6 @@
                 </div>
             </details>
         </div>
-
         <div class="card">
             <div class="images_4"></div>
             <details>
@@ -802,9 +804,7 @@
                 </div>
             </details>
         </div>
-
     </section>
-
     <section>
         <div class="wrapper">
 
@@ -817,7 +817,6 @@
             </div>
         </div>
     </section>
-
     <section class="contact">
         <h3>Contact </h3>
         <p class="u-p">
@@ -831,23 +830,27 @@
             </a>
         </div>
     </section>
-
     <div class="living">
         No olvides mirar las estrellas
     </div>
-
     <section class="footer">
-        <p>
-            Made by Leonardo with <img src="./src/image/hearth.svg" alt="">
-        </p>
-        <p>
-            Cochabamba-Bolivia
-        </p>
+        <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="es_ES" data-type="horizontal"
+            data-theme="dark" data-vanity="leonardo-torrico-becerra-14232b1a5"><a class="LI-simple-link"
+                href='https://bo.linkedin.com/in/leonardo-torrico-becerra-14232b1a5?trk=profile-badge'>leonardo Torrico
+                Becerra</a></div>
+        <div class="footer__text">
+            <p>
+                Made by Leonardo with <img src="./src/image/hearth.svg" alt="">
+            </p>
+            <p>
+                Cochabamba-Bolivia
+            </p>
+        </div>
     </section>
-
     <script src="./src/js/particles.js"></script>
     <script src="./src/js/culo.js"></script>
     <script type="module" src="./api/server.js"></script>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </body>
 
 </html>

@@ -8,17 +8,23 @@ const USERNAME = configg.dbUsername
 const PASSWORD = configg.dbPassword
 const DBNAME = configg.dbName
 
-const URI = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0-yfxun.mongodb.net/${DBNAME}?retryWrites=true&w=majority`
+// const URI = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0-yfxun.mongodb.net/${DBNAME}?retryWrites=true&w=majority`
+const URI = `mongodb+srv://leonardo:a3b8pn0o0pd0l4pa@cluster0-yfxun.mongodb.net/leonardo?retryWrites=true&w=majority`
 
 const client = new MongoClient()
 client.connectWithUri(URI)
-// client.connectWithUri('mongodb+srv://leonardo:a3b8pn0o0pd0l4pa@cluster0-yfxun.mongodb.net/leonardo?retryWrites=true&w=majority')
 
 const db = client.database('leonardo')
 const contact = db.collection('contact')
 
 export const insertId = async (data) => {
   // console.log(JSON.parse(data))
-  console.log(data)
-  await contact.insertOne(data)
+  // console.log(data)
+  // await contact.insertOne(data)
+  await contact.insertOne(JSON.parse(data))
+}
+
+export const getAll = async () => {
+  const data = await contact.find()
+  return data
 }

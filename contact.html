@@ -12,7 +12,7 @@
     margin: 0;
     color: #fff;
     width: 100%;
-    min-width: 410px;
+    min-width: 330px;
     /* height: 80vh; */
     /* max-height: 100vh; */
     /* min-height: 100vh; */
@@ -314,7 +314,7 @@
     /* justify-content: space-between; */
     place-content: center;
     height: 125px;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     margin: 0 auto;
     padding-top: 2em;
@@ -323,21 +323,22 @@
   .footer>p {
     color: aliceblue;
   }
+
   .fnleo {
-        background-image: url('https://res.cloudinary.com/djc1umong/image/upload/v1593562382/fnleo_ecqmyt.png');
-        width: 110px;
-        height: -webkit-fill-available;
-        background-size: cover;
-        background-origin: border-box;
-        background-position: center;
-        cursor: pointer;
-    }
+    background-image: url('https://res.cloudinary.com/djc1umong/image/upload/v1593562382/fnleo_ecqmyt.png');
+    width: 110px;
+    height: -webkit-fill-available;
+    background-size: cover;
+    background-origin: border-box;
+    background-position: center;
+    cursor: pointer;
+  }
 </style>
 
 <body>
   <input type="checkbox" id="open" class="menu-checkbox">
   <header class="header">
-    <a class="fnleo">
+    <a href="/" class="fnleo">
     </a>
     <span>Leonardo Torrico</span>
     <div class="social" id='social__icons'>
@@ -368,39 +369,52 @@
 
   <section class="form">
     <h2>Estoy emocionado por saber de tu proyecto. <strong><i>Listo para empezar?</i></strong> </h2>
-    <form id="form">
+    <form id="form" action='http://localhost:8888/api/form' method='post' id='form'>
 
       <label for="name">Name</label>
-      <input type="text" name="name" id="name" value="">
+      <input type="text" name="name" id="name" value="asd">
 
       <label for="email">Email</label>
-      <input type="text" name="email" id="email" value="">
+      <input type="text" name="email" id="email" value="asd">
 
       <label for="delalles">Detalles Adicionales:</label>
-      <input type="text" name="detalles" id="detalles" value="">
+      <input type="text" name="detalles" id="detalles" value="asd">
       <div class="call-to-action">
-        <button href="./contact.html" style="background-color: #ffdf1b;" type="submit">
+        <button href="./contact.html" style="background-color: #ffdf1b;" type="submit" id="btn">
           <div class="call-to-action-animation"></div>
           Submit
         </button>
       </div>
+      <div id="gracias" style="color: red; letter-spacing: 3px;">Gracias por hacer submit</div>
+      <a id="volver" href="javascript:history.back()" style="color: azure;"> Ir al home</a>
     </form>
   </section>
   <section class="footer">
+    <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="es_ES" data-type="horizontal"
+      data-theme="dark" data-vanity="leonardo-torrico-becerra-14232b1a5"><a class="LI-simple-link"
+        href='https://bo.linkedin.com/in/leonardo-torrico-becerra-14232b1a5?trk=profile-badge'>leonardo Torrico
+        Becerra</a></div>
     <p>
       Made by Leonardo with <img src="./src/image/hearth.svg" alt="">
     </p>
     <p>
       Cochabamba-Bolivia
     </p>
+
   </section>
   <script type="module">
     const form = document.getElementById('form')
     const name = document.getElementById('name')
     const email = document.getElementById('email')
     const detalles = document.getElementById('detalles')
+    const gracias = document.getElementById('gracias')
+    const btn = document.getElementById('btn')
+    const volver = document.getElementById('volver')
+
 
     form.onsubmit = handleSubmit
+    gracias.style.display = 'none'
+    volver.style.display = 'none'
 
     function handleSubmit(e) {
       e.preventDefault()
@@ -408,22 +422,31 @@
       const name = target[0].value
       const email = target[1].value
       const detalles = target[2].value
-      fetch('http://localhost:8888/api/form', {
+      const user = { name, email, detalles }
+      console.log(user)
+      fetch('https://api-psi-seven.vercel.app/api/form', {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ name, email, detalles })
+        body: JSON.stringify({ user })
       })
       clearValues()
+      btn.style.border = '3px solid red'
     }
     function clearValues() {
       name.value = ''
       email.value = ''
       detalles.value = ''
-      window.location.pathname = '/'
-      window.location.href = '/'
+      gracias.style.display = 'block';
+      volver.style.display = 'block';
+      name.setAttribute('disabled', '')
+      email.setAttribute('disabled', '')
+      detalles.setAttribute('disabled', '')
+      btn.style.opacity = '.4'
+      
+      // window.location.pathname = '/'
+      // window.location.href = '/'
     }
   </script>
 </body>
