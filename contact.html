@@ -15,7 +15,6 @@
     min-width: 330px;
     /* height: 80vh; */
     /* max-height: 100vh; */
-    /* min-height: 100vh; */
     min-height: 100vh;
   }
 
@@ -23,6 +22,13 @@
     display: block;
     margin: .3em;
     /* margin: .6em auto; */
+  }
+
+  .open-menu__list li a {
+    /* border: 1px red solid; */
+    color: #fff;
+    /* padding: .8em;
+    margin: 1em; */
   }
 
   input {
@@ -162,6 +168,8 @@
     padding: 0 2em;
     text-align: center;
   }
+
+
 
   .menu-open {
     /* color: black; */
@@ -355,10 +363,9 @@
     <label for="open" class="menu-open"></label>
     <nav class="menu">
       <ul class="open-menu__list">
-        <li><a href="">Esto solo es un menu o eso creemos...</a></li>
-        <li><a href="">No hay nada que ver aqui</a></li>
-        <li><a href=""> <img src="./src/image/law.svg" alt="hammer"> </a></li>
-        <li><a href="">Leonardo Torrico 🎉</a></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href=""><img src="./src/image/law.svg" alt="hammer">We're working!</a></li>
+        <li>Leonardo Torrico 🎉</li>
       </ul>
     </nav>
   </header>
@@ -368,25 +375,25 @@
   </section>
 
   <section class="form">
-    <h2>Estoy emocionado por saber de tu proyecto. <strong><i>Listo para empezar?</i></strong> </h2>
+    <h2>I am excited to known more about your proyect. <strong><i>Lets do it!</i></strong> </h2>
     <form id="form" action='http://localhost:8888/api/form' method='post' id='form'>
 
       <label for="name">Name</label>
-      <input type="text" name="name" id="name" value="asd">
+      <input type="text" name="name" id="name" value="">
 
       <label for="email">Email</label>
-      <input type="text" name="email" id="email" value="asd">
+      <input type="text" name="email" id="email" value="">
 
-      <label for="delalles">Detalles Adicionales:</label>
-      <input type="text" name="detalles" id="detalles" value="asd">
+      <label for="delalles">Details:</label>
+      <input type="text" name="detalles" id="detalles" value="">
       <div class="call-to-action">
         <button href="./contact.html" style="background-color: #ffdf1b;" type="submit" id="btn">
           <div class="call-to-action-animation"></div>
           Submit
         </button>
       </div>
-      <div id="gracias" style="color: red; letter-spacing: 3px;">Gracias por hacer submit</div>
-      <a id="volver" href="javascript:history.back()" style="color: azure;"> Ir al home</a>
+      <div id="gracias" style="color: red; letter-spacing: 3px;">Thank you! 🎗</div>
+      <a id="volver" href="javascript:history.back()" style="color: azure;"> Go to home</a>
     </form>
   </section>
   <section class="footer">
@@ -444,9 +451,8 @@
       email.setAttribute('disabled', '')
       detalles.setAttribute('disabled', '')
       btn.style.opacity = '.4'
-      
-      // window.location.pathname = '/'
-      // window.location.href = '/'
+
+      window.location.pathname = '/'
     }
   </script>
 </body>
